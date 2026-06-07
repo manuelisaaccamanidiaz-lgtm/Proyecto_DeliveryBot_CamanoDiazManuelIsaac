@@ -1,0 +1,6208 @@
+{
+  "name": "proyecto DelivetyBot",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -816,
+        3744
+      ],
+      "id": "6c5c20c8-9d23-46c6-84d8-000e38e90d91",
+      "name": "Telegram Trigger",
+      "webhookId": "ca50fa72-01f7-45df-ba95-1e6fa0190d3f",
+      "retryOnFail": false,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        368
+      ],
+      "id": "b4570bad-11a4-486f-a43b-1255de9ae8f7",
+      "name": "Enviar Menú Al Cliente",
+      "webhookId": "b2927195-d668-449c-9e33-72d1dcbf3968",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b2c80518-5441-419c-98a2-386cc6f4e1bb",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "hola",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ece2d043-b6b6-4d57-8be2-699cc1126790",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "a77f6910-a030-4f9f-8050-f86bc3ba2783",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c45411d2-7c15-443f-95b5-cfc11bd4f17f",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "2",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "667620bc-e814-4b80-b87b-4d8dc2c89e49",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "3",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "35608093-4ef6-411d-bf38-d1e4ffcf4f16",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "4",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c2b5e2cd-bff8-4563-81de-6621394b0ad6",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "5",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "a3a461bf-96be-4959-b4fa-c6f05b8bcc7d",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text }}",
+                    "rightValue": "6",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        944
+      ],
+      "id": "3764221b-3fec-4a98-9ebd-a2bdf803bbee",
+      "name": "Navegación Principal"
+    },
+    {
+      "parameters": {
+        "chatId": "=6975833647",
+        "text": "🍽️ Bienvenido a DeliveryBot\n\nSelecciona una opción:\n\n1️⃣ Ver menú\n2️⃣ Realizar pedido\n3️⃣ Consultar estado del pedido\n\nEscribe el número de la opción.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        96
+      ],
+      "id": "2f7aa416-da8a-4a54-8a59-ddb68c2ad84d",
+      "name": "Mostrar Menú Cliente",
+      "webhookId": "ae68776c-9041-4612-84ed-cbd84f50d0ad",
+      "retryOnFail": false,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "MENU",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        368
+      ],
+      "id": "cfda5e4a-7bb6-4b91-804b-7d41678b2b30",
+      "name": "Obtener Productos Menú",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let menu = \"🍽️ *MENÚ DISPONIBLE*\\n\\n\";\n\nfor (const item of $input.all()) {\n\n  const stock = Number(item.json.stock);\n\n  if (stock > 0) {\n    menu += `🥟🥤 ${item.json.nombre}\\n`;\n    menu += `💸💳 $${item.json.precio}\\n\\n`;\n  }\n}\n\nmenu += \"presione 2 para realizar el pedido\";\n\nreturn [\n  {\n    json: {\n      mensaje: menu\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        368
+      ],
+      "id": "16407d5e-20ca-4b73-8348-8e14bc10215c",
+      "name": "Formatear Menú Disponible"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      telegram_id: $('Telegram Trigger').first().json.message.chat.id,\n      pantalla_actual: \"esperando_producto\",\n      carrito_temporal: \"\",\n      nombre_temporal: \"\",\n      ultimo_cambio: new Date().toLocaleString('es-CO')\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        752
+      ],
+      "id": "3bb91f0b-56b9-4a88-a73e-926092f22a1b",
+      "name": "Configurar Sesión Pedido"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        752
+      ],
+      "id": "96265a03-0ee4-4d3b-9014-0fc5017125e9",
+      "name": "Guardar Estado Esperando Producto",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6975833647",
+        "text": "🍽️ ¿Qué productos deseas ordenar?\n\nEscríbelos separados por comas.\n\nEjemplo:\nCafé, Empanada, Jugo",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        752
+      ],
+      "id": "b1b2273d-d114-4b88-a49e-baf124c348b1",
+      "name": "Solicitar Productos Pedido",
+      "webhookId": "4cb7b759-1781-4268-9274-513bcfd18f25",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "telegram_id",
+              "lookupValue": "={{ $json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -592,
+        3744
+      ],
+      "id": "5b106073-9fd8-447e-8cda-cda15da1d89e",
+      "name": "Leer Sesión Activa",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const productosPedido =\n$('Parsear Productos Texto').first().json.productos;\n\nlet total = 0;\nlet resumen = [];\nlet agotados = [];\n\nfor (const fila of $input.all()) {\n\n  const nombre = fila.json.nombre;\n  const precio = Number(fila.json.precio);\n  const stock = Number(fila.json.stock);\n\n  if (productosPedido.includes(nombre)) {\n\n    if (stock <= 0) {\n\n      agotados.push(nombre);\n\n      continue;\n\n    }\n\n    total += precio;\n\n    resumen.push(\n      `${nombre} - $${precio}`\n    );\n\n  }\n\n}\n\nreturn [{\njson:{\n\nagotados,\n\ncarrito_temporal:\nresumen.join('\\n'),\n\nprecio_temporal:\ntotal,\n\nnombre_temporal:\"\",\n\npantalla_actual:\n\"esperando_confirmacion\",\n\ntelegram_id:\n$('Telegram Trigger')\n.first()\n.json.message.chat.id,\n\nultimo_cambio:\nnew Date().toLocaleString('es-CO')\n\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        2064
+      ],
+      "id": "3e50d959-0632-451c-9d7e-4785381d4adb",
+      "name": "Calcular Total Y Carrito"
+    },
+    {
+      "parameters": {
+        "jsCode": "const ahora = new Date();\n\nconst idPedido =\n`ORD-${Math.floor(\n1000 + Math.random() * 9000\n)}`;\n\nreturn [\n{\njson:{\nid_pedido: idPedido,\nid_usuario: $('Leer Sesión Activa').first().json.telegram_id,\ndetalles_pedido:$('Leer Sesión Activa').first().json.carrito_temporal,\ntotal_pago: Number($('Leer Sesión Activa').first().json.precio_temporal),\nestado: \"Recibido\",\nfecha: ahora.toLocaleDateString('es-CO'),\nhora: ahora.toLocaleTimeString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        2544
+      ],
+      "id": "e86e736d-b356-44d8-8861-e578ef8141b6",
+      "name": "Generar ID Y Datos Pedido"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"menu_principal\",\ncarrito_temporal: $input.first().json.detalles_pedido,\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1888,
+        2448
+      ],
+      "id": "57c1dd13-0730-4870-9be0-9c4c98cc469f",
+      "name": "Restablecer Sesión Post-Confirmación"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2112,
+        2448
+      ],
+      "id": "19d01352-50e7-44f4-915a-41a9f02d3504",
+      "name": "Guardar Sesión Post-Confirmación",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"menu_principal\",\ncarrito_temporal: \"\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        2832
+      ],
+      "id": "07e9673a-5b1b-40ba-a9fa-e8acbae8c61c",
+      "name": "Configurar Sesión Cancelación"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        2832
+      ],
+      "id": "da323361-03d2-478f-9232-f8c2cea77a0a",
+      "name": "Guardar Sesión Cancelación",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6975833647",
+        "text": "❌ Pedido cancelado. \nPuedes volver al menú principal escribiendo:  \n1️⃣ Ver menú \n2️⃣ Realizar pedido \n3️⃣ Consultar estado",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        2832
+      ],
+      "id": "58f66ec8-5ec3-4b9b-a5a3-2bbaaa77eb83",
+      "name": "Notificar Pedido Cancelado",
+      "webhookId": "7b5207d6-dda4-484d-9965-e1c4f9ed9f98",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1440,
+        752
+      ],
+      "id": "1b54e2ee-b095-46ab-a8a5-69830f5f912c",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"esperando_producto\",\ncarrito_temporal: \"\",\nnombre_temporal: \"\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        752
+      ],
+      "id": "2432bc53-e993-42bc-bd81-de6ab7acf41c",
+      "name": "Preparar Sesión Tipo Consulta"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "MENU",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1216,
+        2064
+      ],
+      "id": "de8eb5a4-356a-427a-a643-845745410446",
+      "name": "Obtener Precios Y Stock",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const texto = $('Telegram Trigger')\n.first()\n.json.message.text;\n\nconst productos = texto\n.split(',')\n.map(p => p.trim());\n\nreturn [\n{\njson:{\nproductos\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        2160
+      ],
+      "id": "cccf44f7-71ec-4c86-876e-2a140a008ebe",
+      "name": "Parsear Productos Texto"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"esperando_estado\",\ncarrito_temporal: \"\",\nprecio_temporal: \"\",\nnombre_temporal: \"\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        560
+      ],
+      "id": "bb66d8bc-c6ad-4a3e-8392-cba2cc8df05a",
+      "name": "Configurar Sesión Consulta Estado"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        560
+      ],
+      "id": "437e03ee-4ac3-42b5-b509-26a00217c133",
+      "name": "Guardar Estado Esperando ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "📦 Escribe el ID de tu pedido.  \n\nEjemplo:  \nORD-1748972548",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        560
+      ],
+      "id": "864d56d2-0af2-4809-8715-ad45925b30e2",
+      "name": "Solicitar ID Pedido Cliente",
+      "webhookId": "1624f8d0-3c21-472b-9814-bedcabe29c24",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_pedido",
+              "lookupValue": "={{ $('Telegram Trigger').first().json.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        320,
+        3216
+      ],
+      "id": "487c5570-184c-4bd5-a953-818184905cf6",
+      "name": "Buscar Pedido Por ID",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=📦 Estado actual del pedido \n🆔 {{ $json.id_pedido }}  \n📍 Estado: {{ $json.estado }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        3168
+      ],
+      "id": "07a451ed-a6ac-4246-9e37-a17afd634ca7",
+      "name": "Mostrar Estado Pedido",
+      "webhookId": "bfa7f338-3fc7-439d-a3cf-89b4a08bbecc",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"menu_principal\",\ncarrito_temporal: \"\",\nprecio_temporal: \"\",\nnombre_temporal: \"\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        3168
+      ],
+      "id": "1c84370d-189e-4e32-bc38-927904eb02c0",
+      "name": "Restablecer Sesión Consulta"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1216,
+        3168
+      ],
+      "id": "bfc27b4e-b0a9-4405-853d-968091f1afef",
+      "name": "Guardar Sesión Consulta Finalizada",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "telegram_id",
+              "lookupValue": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        176
+      ],
+      "id": "02f3f2df-51d6-4a8a-8916-8992e5bad1fc",
+      "name": "Consultar Datos Usuario",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "36ee152e-c154-4128-9adc-e4d475124907",
+              "leftValue": "={{ $json.usuarioExiste }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        992,
+        176
+      ],
+      "id": "165e1eb9-3672-48cc-b9bf-5f389ca9abda",
+      "name": "¿Usuario Registrado?"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "👋 Bienvenido a DeliveryBot.  \nAntes de continuar necesito registrarte.  \nPor favor escribe tu nombre completo.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1216,
+        480
+      ],
+      "id": "7439a17b-3f33-4131-a515-03c33751bd35",
+      "name": "Solicitar Nombre Registro",
+      "webhookId": "671cb4a6-7363-42ad-bab9-7a89773a48f7",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"registro_nombre\",\nrol: $('Consultar Datos Usuario').first().json.rol,\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        480
+      ],
+      "id": "25424ee7-6961-44d6-9c41-9a27fe3a722c",
+      "name": "Iniciar Sesión Registro Nombre"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        480
+      ],
+      "id": "71cae810-9e6a-4415-a4bd-8e406ffe865c",
+      "name": "Guardar Estado Registro",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\nnombre_temporal: $('Telegram Trigger').first().json.message.text,\npantalla_actual: \"registro_departamento\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        3552
+      ],
+      "id": "8877c0a4-91f9-4449-9edd-2ccd5977022d",
+      "name": "Guardar Nombre Temporal"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        3552
+      ],
+      "id": "c3f4d428-9c46-40a5-9b4f-0499adb96a6e",
+      "name": "Actualizar Sesión Nombre",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=🏢 ¿Cuál es tu departamento u oficina?  \nEjemplo:  \nOficina 204 \nLaboratorio A \nSala de Sistemas",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        3552
+      ],
+      "id": "1fe3459b-96b0-4303-8923-0ad3df0540a5",
+      "name": "Solicitar Departamento",
+      "webhookId": "d72671c5-c707-4891-ae44-66b3b1c60feb",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "telegram_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "nombre_completo": "={{ $('Leer Sesión Activa').item.json.nombre_temporal }}",
+            "departamento/oficina": "={{ $('Telegram Trigger').first().json.message.text }}",
+            "puntos_lealtad": "0",
+            "rol": "cliente"
+          },
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_completo",
+              "displayName": "nombre_completo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "departamento/oficina",
+              "displayName": "departamento/oficina",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "puntos_lealtad",
+              "displayName": "puntos_lealtad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        320,
+        3744
+      ],
+      "id": "73f8a080-3225-41f8-8f9d-23e9847bb8cc",
+      "name": "Registrar Usuario Nuevo",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "Usuario creado",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        544,
+        3744
+      ],
+      "id": "b9fa7f5d-b454-45b0-8b39-d3561a29e11a",
+      "name": "Confirmar Registro Usuario",
+      "webhookId": "2331f697-7a66-46a1-a832-3c43818a085e",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"menu_principal\",\ncarrito_temporal: $input.first().json.detalles_pedido,\nrol:$('Registrar Usuario Nuevo').first().json.rol,\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        3744
+      ],
+      "id": "7e1926a7-bec7-40ce-9888-1aa1e7bba4f2",
+      "name": "Configurar Sesión Post-Registro"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        3744
+      ],
+      "id": "a910e0e5-1ed4-49e7-9287-da464e580aa8",
+      "name": "Guardar Sesión Post-Registro",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    usuarioExiste: !!$json.telegram_id\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        176
+      ],
+      "id": "15da71a8-6e35-4e53-a917-a8cae927a27c",
+      "name": "Verificar Usuario Existente"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    sesionExiste: !!$json.telegram_id\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -368,
+        3744
+      ],
+      "id": "ea86bfce-add3-4392-952c-48892db8a199",
+      "name": "Verificar Sesión Existente"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "bc7f3948-6ff2-4926-b7bb-3ac9e8c400f5",
+              "leftValue": "={{ $json.sesionExiste }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -128,
+        3744
+      ],
+      "id": "01102880-282c-47cb-bbb4-9caacac83537",
+      "name": "¿Sesión Existe?"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\njson:{\ntelegram_id:\n$('Telegram Trigger').first().json.message.chat.id,\n\npantalla_actual:\n\"menu_principal\",\n\ncarrito_temporal:\n\"\",\n\nprecio_temporal:\n0,\n\nnombre_temporal:\n\"\",\n\nultimo_cambio:\nnew Date().toLocaleString('es-CO')\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        96,
+        4320
+      ],
+      "id": "89b6ef73-4e72-452b-893c-32003acfc0d6",
+      "name": "Configurar Sesión Nueva"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        320,
+        4320
+      ],
+      "id": "97eef093-4aa6-40a0-9e1e-b7d247ad1141",
+      "name": "Guardar Sesión Nueva",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Consultar Datos Usuario').item.json.rol }}",
+                    "rightValue": "cliente",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "89c572ca-88f7-4c5a-94ee-335ed2109dd1"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "901fe7a2-8a99-44e9-bc5c-ea646bd143a2",
+                    "leftValue": "={{ $('Consultar Datos Usuario').item.json.rol }}",
+                    "rightValue": "administrador",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1216,
+        96
+      ],
+      "id": "e8bc7355-06a9-46d5-bf9d-4a4fcfc80330",
+      "name": "Router Rol Usuario"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "👨‍🍳 Panel de Administración  \n1. Ver menú \n2. Realizar pedido \n3. Consultar estado \n4. Cambiar estado de pedido \n5. Ver pedidos pendientes\n6. Reporte financiero",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        288
+      ],
+      "id": "da460ee0-71e4-4bfe-a998-d8c2a7db332e",
+      "name": "Mostrar Panel Administrador",
+      "webhookId": "b16309bf-1da7-4f36-90c9-a56d19588e8d",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"admin_id_pedido\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        944
+      ],
+      "id": "17d42489-3cb1-4208-b9b8-0154f837c8a3",
+      "name": "Configurar Sesión Admin ID Pedido"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        944
+      ],
+      "id": "fce4d341-6852-469f-a60a-4853dc8e6218",
+      "name": "Guardar Sesión Admin ID Pedido",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "📦 Ingrese el ID del pedido.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1216,
+        944
+      ],
+      "id": "133d426b-0fb0-4743-a6db-be9ffac07d14",
+      "name": "Solicitar ID Pedido Admin",
+      "webhookId": "d0d80de1-deb8-47dc-9533-b1e22123af84",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npedido_temporal: $('Telegram Trigger').first().json.message.text,\npantalla_actual: \"admin_estado\"\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        3936
+      ],
+      "id": "9e126892-3aa1-4178-b044-17d5e032d9f3",
+      "name": "Guardar ID Pedido Temporal Admin"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        3936
+      ],
+      "id": "eee531fe-126c-4048-9c41-207367a55eda",
+      "name": "Guardar ID Pedido En Sesión",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "Seleccione el nuevo estado:  \n1. Preparación \n2. En camino \n3. Entregado",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        3936
+      ],
+      "id": "de92fa04-4187-4e91-87d8-254cdcee6eb0",
+      "name": "Solicitar Nuevo Estado Admin",
+      "webhookId": "7a814dee-53d6-4a1c-9145-5674da44dea9",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let estado = \"\";\n\nconst opcion =\n$('Telegram Trigger').first().json.message.text;\n\nif (opcion === \"1\") {\n estado = \"Preparación\";\n}\n\nif (opcion === \"2\") {\n estado = \"En camino\";\n}\n\nif (opcion === \"3\") {\n estado = \"Entregado\";\n}\n\nreturn [{\njson:{\nestado\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        4128
+      ],
+      "id": "44cbf5ff-2816-4f1a-9a47-5ab09a15a132",
+      "name": "Traducir Opción A Estado"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_pedido",
+              "lookupValue": "={{ $('Leer Sesión Activa').item.json.pedido_temporal }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        4128
+      ],
+      "id": "fc825106-fa39-4943-aef2-2e1143c7dfa2",
+      "name": "Buscar Pedido Admin",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": 0,
+            "id_pedido": "={{ $('Buscar Pedido Admin').first().json.id_pedido }}",
+            "estado": "={{ $('Traducir Opción A Estado').item.json.estado }}"
+          },
+          "matchingColumns": [
+            "id_pedido"
+          ],
+          "schema": [
+            {
+              "id": "id_pedido",
+              "displayName": "id_pedido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "id_usuario",
+              "displayName": "id_usuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "detalles_pedido",
+              "displayName": "detalles_pedido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_pago",
+              "displayName": "total_pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "estado",
+              "displayName": "estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hora",
+              "displayName": "hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        4032
+      ],
+      "id": "ffcdd8f7-258c-46b9-9d43-bd2c6b7c4c30",
+      "name": "Actualizar Estado Pedido",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "menu_principal",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5e04e2cd-f711-4949-952b-5d1f422354b9"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "7a45205e-144e-4ccf-b0df-fcb6ca0d7355",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "esperando_producto",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "6521b563-ee35-4b22-ac9e-402c58a767cc",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "esperando_confirmacion",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "8ffd4253-a186-4229-bf0f-5a89587074a0",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "esperando_estado",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "f9cb8149-36cb-4138-a42f-a705b4d8d4e7",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "registro_nombre",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "fe88a309-a62d-4f12-9495-5b6f8c9f2c7c",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "registro_departamento",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "d7518213-8343-4190-931c-5c578f71df5f",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "admin_id_pedido",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "09e51363-c45f-45d3-8dca-3bc95fc14961",
+                    "leftValue": "={{ $('Leer Sesión Activa').item.json.pantalla_actual }}",
+                    "rightValue": "admin_estado",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        3264
+      ],
+      "id": "04507792-5394-48b6-a599-a556880abb43",
+      "name": "Router Pantalla Actual"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    id_usuario: $('Buscar Pedido Admin').first().json.id_usuario,\n    estado: $('Buscar Pedido Admin').first().json.estado,\n    id_pedido: $('Buscar Pedido Admin').first().json.id_pedido\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        4032
+      ],
+      "id": "18407790-0250-43a3-81c8-6ae81261ac1e",
+      "name": "Preparar Datos Notificación Cliente"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "telegram_id",
+              "lookupValue": "={{ $json.id_usuario }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        4032
+      ],
+      "id": "468d0590-a343-4963-ac88-0e7b00475a29",
+      "name": "Buscar Datos Usuario Por ID Pedido",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=📦 Actualización de pedido  \n🆔 Pedido:   {{ $('Obtener Datos Pedido Para Notificar').item.json.id_pedido }}\n📍 Estado actual:  {{ $('Actualizar Estado Pedido').item.json.estado }}\n\nGracias por tu compra.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1888,
+        4032
+      ],
+      "id": "950e7af9-e2b1-4e8f-a882-8134f7cfabc8",
+      "name": "Notificar Cambio Estado Al Cliente",
+      "webhookId": "0474671e-b10e-4082-8ebe-a150a07d7005",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_pedido",
+              "lookupValue": "={{ $json.id_pedido }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1216,
+        4032
+      ],
+      "id": "55072dce-5bb9-422c-bb83-83b81a046545",
+      "name": "Obtener Datos Pedido Para Notificar",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "rol",
+              "lookupValue": "administrador"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        2640
+      ],
+      "id": "29739ff3-a9a3-442a-b396-14e190ac8a5e",
+      "name": "Buscar Administradores",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\njson:{\ntelegram_id: $('Leer Sesión Activa').first().json.telegram_id,\n\nmensaje:\n`🔔 NUEVO PEDIDO\n\n🆔 Pedido:\n${$('Guardar Pedido').first().json.id_pedido}\n\n🛒 Productos:\n${$('Leer Sesión Activa').first().json.carrito_temporal}\n\n💰 Total:\n$${$('Leer Sesión Activa').first().json.precio_temporal}`\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        2640
+      ],
+      "id": "39542e35-c69a-481c-b380-8de12dc11ad7",
+      "name": "Preparar Notificación Cocina"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        2640
+      ],
+      "id": "52ca47c1-a8a9-4876-ba2c-65ca30f9f28a",
+      "name": "Notificar Cocina",
+      "webhookId": "f8bfc4c9-0c2d-4dda-97f4-ef1df8b8b188",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        1328
+      ],
+      "id": "5326bd21-dadd-4395-897d-4dfced64abbd",
+      "name": "Obtener Pedidos Pendientes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const pedidos = $input.all();\n\nlet mensaje = \"📋 PEDIDOS PENDIENTES\\n\\n\";\n\nfor (const pedido of pedidos) {\n\n  const estado = pedido.json.estado;\n\n  if (\n    estado !== \"Entregado\" &&\n    estado !== \"entregado\"\n  ) {\n\n    mensaje +=\n`🆔 ${$input.first().json.id_pedido}\n📦 Estado: ${$input.first().json.estado}\n🛒 ${$input.first().json.detalles_pedido}\n💰 Total: $${$input.first().json.total_pago}\n\n`;\n\n  }\n\n}\n\nif (mensaje === \"📋 PEDIDOS PENDIENTES\\n\\n\") {\n\n  mensaje += \"No hay pedidos pendientes.\";\n\n}\n\nreturn [{\n  json: {\n    mensaje\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        1328
+      ],
+      "id": "cb3ffa56-326a-4f2c-b534-fb1ee73a89b3",
+      "name": "Formatear Pedidos Pendientes"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1216,
+        1328
+      ],
+      "id": "10081355-adbd-4639-8cd2-77d9bac4a055",
+      "name": "Mostrar Pedidos Pendientes",
+      "webhookId": "ecd92e59-36a5-410d-bb1f-8a57691125e3",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        1712
+      ],
+      "id": "df7f096e-9296-466c-b879-9f23c3e93abf",
+      "name": "Obtener Pedidos Reporte",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const pedidos = $input.all();\n\nlet totalVentas = 0;\nlet cantidadPedidos = 0;\n\nconst productos = {};\nconst horas = {};\n\nfor (const pedido of pedidos) {\n\n  cantidadPedidos++;\n\n  totalVentas += Number(\n    pedido.json.total_pago || 0\n  );\n\n  // Productos vendidos\n\n  const detalle =\n    pedido.json.detalles_pedido || \"\";\n\n  const listaProductos =\n    detalle.split(\",\");\n\n  for (let producto of listaProductos) {\n\n    producto = producto.trim();\n\n    if (!producto) continue;\n\n    productos[producto] =\n      (productos[producto] || 0) + 1;\n\n  }\n\n  // Hora pico\n\n  const hora =\n    pedido.json.hora;\n\n  if (hora) {\n\n    horas[hora] =\n      (horas[hora] || 0) + 1;\n\n  }\n\n}\n\n// Producto estrella\n\nlet productoEstrella =\n  \"Sin datos\";\n\nlet maxProductos = 0;\n\nfor (const producto in productos) {\n\n  if (\n    productos[producto] >\n    maxProductos\n  ) {\n\n    maxProductos =\n      productos[producto];\n\n    productoEstrella =\n      producto;\n\n  }\n\n}\n\n// Hora pico\n\nlet horaPico =\n  \"Sin datos\";\n\nlet maxHoras = 0;\n\nfor (const hora in horas) {\n\n  if (\n    horas[hora] >\n    maxHoras\n  ) {\n\n    maxHoras =\n      horas[hora];\n\n    horaPico =\n      hora;\n\n  }\n\n}\n\nreturn [{\n  json: {\n\n    mensaje:\n\n`📊 REPORTE FINANCIERO\n\n💰 Total vendido:\n$${totalVentas}\n\n📦 Pedidos:\n${cantidadPedidos}\n\n🏆 Producto estrella:\n${productoEstrella}\n\n⏰ Hora pico:\n${horaPico}`\n\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        1712
+      ],
+      "id": "94a6f7be-427f-4101-8456-2c855d6b6477",
+      "name": "Generar Reporte Financiero"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1216,
+        1712
+      ],
+      "id": "b873f0da-a7b3-4025-be99-6c73a77980bf",
+      "name": "Enviar Reporte Financiero",
+      "webhookId": "62c420c6-9bd5-43d3-86ba-4db0082c4e8f",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5f9ef306-89fa-496a-a2ef-d83dacd1c0ba",
+              "leftValue": "={{ $('Leer Sesión Activa').item.json.rol }}",
+              "rightValue": "administrador",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        544,
+        1040
+      ],
+      "id": "f01cd7a4-7440-4689-a3eb-194d4558ce42",
+      "name": "¿Es Administrador? (Pedidos)"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "⛔ No tienes permisos para acceder a esta función.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        1136
+      ],
+      "id": "3c0875ba-4fe7-48b6-9975-22d477d5ee60",
+      "name": "Denegar Acceso Pedidos Pendientes",
+      "webhookId": "a3c84d1f-b56e-446a-be39-060f41ebb1bf",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5f9ef306-89fa-496a-a2ef-d83dacd1c0ba",
+              "leftValue": "={{ $('Leer Sesión Activa').item.json.rol }}",
+              "rightValue": "administrador",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        544,
+        1424
+      ],
+      "id": "0934bd4b-298c-4852-bf87-169eabdbc910",
+      "name": "¿Es Administrador? (Reporte)"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "⛔ No tienes permisos para acceder a esta función.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        1520
+      ],
+      "id": "1ca3dcd3-e842-46d1-9ebe-d36cf3e71502",
+      "name": "Denegar Acceso Reporte",
+      "webhookId": "a3c84d1f-b56e-446a-be39-060f41ebb1bf",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5f9ef306-89fa-496a-a2ef-d83dacd1c0ba",
+              "leftValue": "={{ $('Leer Sesión Activa').item.json.rol }}",
+              "rightValue": "administrador",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        544,
+        1808
+      ],
+      "id": "7294e6ee-cf51-477d-83d0-3c69e2f0736b",
+      "name": "¿Es Administrador? (Cambio Estado)"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "⛔ No tienes permisos para acceder a esta función.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        1904
+      ],
+      "id": "8eca5f2c-699b-4fce-88df-ae68739f0236",
+      "name": "Denegar Acceso Cambio Estado",
+      "webhookId": "a3c84d1f-b56e-446a-be39-060f41ebb1bf",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=━━━━━━━━━━━━━━\n\n🧾 RECIBO DIGITAL\n  \n🆔 ID del pedido: \n{{ $('Generar ID Y Datos Pedido').item.json.id_pedido }}\n\n🛒 Productos: \n{{ $json.detalles_pedido }}\n\n💰 Total: \n${{ $('Generar ID Y Datos Pedido').item.json.total_pago }}  \n\n📍Estado: Recibido\n\n━━━━━━━━━━━━━━\nGuarda el ID para consultar el estado de tu pedido.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        2448
+      ],
+      "id": "17bbf378-eece-4442-a770-bed30dbcf11a",
+      "name": "Recibo Digital",
+      "webhookId": "15e6eb02-380b-44b5-b5be-0b07ecae8683",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 879110729,
+          "mode": "list",
+          "cachedResultName": "PEDIDOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=879110729"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "id_pedido"
+          ],
+          "schema": [
+            {
+              "id": "id_pedido",
+              "displayName": "id_pedido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "id_usuario",
+              "displayName": "id_usuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "detalles_pedido",
+              "displayName": "detalles_pedido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_pago",
+              "displayName": "total_pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "estado",
+              "displayName": "estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hora",
+              "displayName": "hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        768,
+        2544
+      ],
+      "id": "a65804b0-886c-433b-9e8e-c5591c6bfee5",
+      "name": "Guardar Pedido",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "MENU",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        2640
+      ],
+      "id": "961c2323-7bf8-4a67-97e6-3e6091cfcf9a",
+      "name": "Obtener Productos Para Stock",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const detalle =\n$('Guardar Pedido').first().json.detalles_pedido;\n\nconst productosPedido =\ndetalle\n.split('\\n')\n.map(x => x.split(' - ')[0].trim());\n\nlet resultado = [];\n\nfor (const item of $input.all()) {\n\n  const producto =\n  item.json.nombre;\n\n  let stock =\n  Number(item.json.stock);\n\n  if (\n    productosPedido.includes(producto)\n  ) {\n\n    stock--;\n\n    resultado.push({\n      json:{\n        id_producto:\n        item.json.id_producto,\n\n        nombre:\n        producto,\n\n        stock:\n        stock\n      }\n    });\n\n  }\n\n}\n\nreturn resultado;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1888,
+        2640
+      ],
+      "id": "7c56f014-3cc7-486b-a01d-b517113aded2",
+      "name": "Calcular Nuevo Stock"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "MENU",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_producto": "={{ $json.id_producto }}",
+            "stock": "={{ $json.stock }}"
+          },
+          "matchingColumns": [
+            "id_producto"
+          ],
+          "schema": [
+            {
+              "id": "id_producto",
+              "displayName": "id_producto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre",
+              "displayName": "nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "descripcion",
+              "displayName": "descripcion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio",
+              "displayName": "precio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "categoria",
+              "displayName": "categoria",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "stock",
+              "displayName": "stock",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2112,
+        2640
+      ],
+      "id": "be9c32da-fb8c-4d25-bf97-c43178c06b92",
+      "name": "Actualizar Stock",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const productosPedido =\n$('Parsear Productos Texto').first().json.productos;\n\nconst productosMenu =\n$input.all().map(\nitem => item.json.nombre\n);\n\nconst noEncontrados =\nproductosPedido.filter(\nproducto =>\n!productosMenu.includes(producto)\n);\n\nreturn [{\njson:{\nproductosPedido,\nproductosMenu,\nnoEncontrados,\nesValido:\nnoEncontrados.length === 0\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        2160
+      ],
+      "id": "aa60eb6c-0969-477f-98e3-89d7c49524aa",
+      "name": "Validar Productos Existen"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "42e4514a-1711-4709-b2b0-44999fe3259d",
+              "leftValue": "={{ $json.esValido }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        992,
+        2160
+      ],
+      "id": "084710f9-cdd0-4aae-9e23-ce85866c5411",
+      "name": "¿Productos Válidos?"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=❌ Los siguientes productos no existen:  {{ $json.noEncontrados.join(', ') }}  Consulta el menú e intenta nuevamente.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1216,
+        2256
+      ],
+      "id": "36034426-1329-43fb-b3e9-22c88b5d4250",
+      "name": "Notificar Productos No Encontrados",
+      "webhookId": "d8102734-3be6-497a-87c3-f6d6e46356f3",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=❌ Opción no válida.  \nPor favor selecciona una opción del menú. \n\n1️⃣ Ver menú \n2️⃣ Realizar pedido \n3️⃣ Consultar pedido  \n",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        544,
+        1232
+      ],
+      "id": "bfadc570-84ec-48d4-b8ae-40e698fde340",
+      "name": "Mensaje Opción Inválida",
+      "webhookId": "78f149ee-4f15-4af1-8cb9-bd2c143bccf9",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text.toUpperCase().trim() }}",
+                    "rightValue": "SI",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "0c4c0e09-07b8-4e0a-9049-e70d50bfece9"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "e9902573-6a6a-41a4-9e59-80bac820985e",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.text.toUpperCase().trim() }}",
+                    "rightValue": "NO",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        2864
+      ],
+      "id": "1b4ea1b1-2695-44ca-b2e2-1a3a7c66b224",
+      "name": "Router Confirmación SI/NO"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "❌ Respuesta inválida. \n Por favor responde únicamente:  \nSI / NO",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        544,
+        3024
+      ],
+      "id": "55eb5513-55d1-45b4-bdd7-da2cab363755",
+      "name": "Notificar Respuesta Inválida SI/NO",
+      "webhookId": "47763c3f-eb4b-420d-8ad8-74200319d83f",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "9a003cd3-de39-4b65-a4bf-b911c6f6b325",
+              "leftValue": "={{ $json.agotados.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1664,
+        2064
+      ],
+      "id": "e2a5c5a1-5ded-41f1-9944-4535c9fe0c48",
+      "name": "¿Hay Productos Agotados?"
+    },
+    {
+      "parameters": {
+        "chatId": "=6975833647",
+        "text": "=🛒 Resumen del pedido\n\n{{ $json.carrito_temporal }}\n\n💰 Total:\n${{ $json.precio_temporal }}\n\n¿Deseas confirmar?\n\nSI / NO",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2112,
+        2208
+      ],
+      "id": "520f29d8-b3bf-406f-9886-dbcf97f9ea35",
+      "name": "Mostrar Resumen Confirmación",
+      "webhookId": "1cdadcf9-8da3-4a81-b291-6be0022d0856",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1888,
+        2208
+      ],
+      "id": "154157b5-d107-4088-8f6b-0686d92d8c14",
+      "name": "Guardar Carrito En Sesión",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=❌ Los siguientes productos están agotados:  \n{{ $json.agotados.join(', ') }}  \nPor favor selecciona otros productos.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1888,
+        2016
+      ],
+      "id": "d981b06d-ab79-4585-a7c1-8bbd003d2438",
+      "name": "Notificar Productos Agotados",
+      "webhookId": "f17e86d3-96b5-4bd6-90a1-81b45eb2c492",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=6975833647",
+        "text": "parece que eres nuevo en el sistema🤗, por favor interactua de nuevo🙂",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        544,
+        4320
+      ],
+      "id": "fa57f3e2-9a6f-492c-bbbd-84fb4f2cd0bf",
+      "name": "Bienvenida Usuario Nuevo",
+      "webhookId": "44978f35-5a1a-4c8a-b5ae-8a89f28205e7",
+      "credentials": {
+        "telegramApi": {
+          "id": "TwSIw442JkqO2YE9",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "MENU",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        544,
+        2160
+      ],
+      "id": "3bd9d8ee-9820-4a2a-829a-dae63fe66cac",
+      "name": "Consultar Menú Para Validar",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "agotados",
+              "displayName": "agotados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2336,
+        4032
+      ],
+      "id": "e4a1cded-0b5a-4b45-a05c-822d3e802418",
+      "name": "Guardar Sesión Post-Cambio Estado",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"menu_principal\",\nrol:$('Leer Sesión Activa').first().json.rol,\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2112,
+        4032
+      ],
+      "id": "06d36b3f-3bf8-4fad-9564-1005c07e58b1",
+      "name": "Configurar Sesión Post-Cambio Estado"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "75677b26-8a66-4bd5-b07f-901af702018e",
+              "leftValue": "={{ $json.id_pedido }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        544,
+        3216
+      ],
+      "id": "6391de75-fbd7-4238-80d1-cc16933bd3b5",
+      "name": "¿Pedido Encontrado?"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "❌ No se encontró ningún pedido con ese ID.  Verifica el número e intenta nuevamente.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        3360
+      ],
+      "id": "2265693a-d8f2-43f5-b16a-fcd2fd71a0bc",
+      "name": "Notificar Pedido No Encontrado Cliente",
+      "webhookId": "28bd2b4b-73bc-4740-ba65-c10e22f72ae7",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "pantalla_actual": "menu_principal",
+            "telegram_id": "="
+          },
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "agotados",
+              "displayName": "agotados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1216,
+        3360
+      ],
+      "id": "e3381cff-89e2-4c73-9dec-190dcf7b67bc",
+      "name": "Guardar Sesión Reintento Consulta",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"esperando_estado\",\ncarrito_temporal: \"\",\nprecio_temporal: \"\",\nnombre_temporal: \"\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        992,
+        3360
+      ],
+      "id": "2553c7c4-1070-4e07-a64a-af7e1887234f",
+      "name": "Configurar Sesión Reintento Consulta"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "e6ac45c6-2646-4dfa-958e-0e754beb8842",
+              "leftValue": "={{ $json.id_pedido }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        768,
+        4128
+      ],
+      "id": "de4cd0a3-023a-4072-a844-de485db6cdcf",
+      "name": "¿Pedido Admin Encontrado?"
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "❌ Pedido no encontrado.  Por favor verifica el ID.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        4224
+      ],
+      "id": "23914959-3a9c-4eef-b49f-4b099e84ca7a",
+      "name": "Notificar Pedido No Encontrado Admin",
+      "webhookId": "65a5ec0f-163f-4f9b-8e27-07aed645fe6a",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\njson:{\ntelegram_id: $('Telegram Trigger').first().json.message.chat.id,\npantalla_actual: \"admin_id_pedido\",\nultimo_cambio: new Date().toLocaleString('es-CO')\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        4224
+      ],
+      "id": "6dae8188-8297-47d3-a272-c6c09e6b547a",
+      "name": "Configurar Sesión Reintento Admin"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1318614650,
+          "mode": "list",
+          "cachedResultName": "SESSIONS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1318614650"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "pantalla_actual",
+              "displayName": "pantalla_actual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "carrito_temporal",
+              "displayName": "carrito_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "precio_temporal",
+              "displayName": "precio_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nombre_temporal",
+              "displayName": "nombre_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedido_temporal",
+              "displayName": "pedido_temporal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ultimo_cambio",
+              "displayName": "ultimo_cambio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1440,
+        4224
+      ],
+      "id": "50c81de3-26de-4a24-af47-629fb689cb80",
+      "name": "Guardar Sesión Reintento Admin",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "📦 Ingrese el ID del pedido.",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        4224
+      ],
+      "id": "ef26143d-76f2-43a1-b385-2758d6276540",
+      "name": "Solicitar ID Reintento Admin",
+      "webhookId": "d0d80de1-deb8-47dc-9533-b1e22123af84",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "📦 Escribe el ID de tu pedido.  \n\nEjemplo:  \nORD-1748972548",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1440,
+        3360
+      ],
+      "id": "522d5002-0c17-4a78-a258-4ae9857c5fa2",
+      "name": "Solicitar ID Reintento Cliente",
+      "webhookId": "1624f8d0-3c21-472b-9814-bedcabe29c24",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "telegram_id",
+              "lookupValue": "={{ $('Telegram Trigger').first().json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        2448
+      ],
+      "id": "4a00ccdb-4214-47a7-8182-105bd9ab9fa5",
+      "name": "Buscar Usuario Para Puntos",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const puntosActuales =\nNumber(\n$input.first().json.puntos_lealtad || 0\n);\n\nconst totalCompra =\nNumber(\n$('Guardar Pedido').first().json.total_pago\n);\n\nconst puntosGanados =\nMath.floor(totalCompra / 1000);\n\nconst puntosTotales =\npuntosActuales + puntosGanados;\n\nreturn [{\njson:{\ntelegram_id:\n$input.first().json.telegram_id,\n\npuntos_lealtad:\npuntosTotales,\n\npuntos_ganados:\npuntosGanados\n}\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        2448
+      ],
+      "id": "8a41a042-8c2e-45d9-b2af-8dbb0ba19296",
+      "name": "Calcular Puntos Lealtad"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk",
+          "mode": "list",
+          "cachedResultName": "DeliveryBot_DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1485604746,
+          "mode": "list",
+          "cachedResultName": "USUARIOS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zS-Su2flzTAmO6rsAp2rG8iIrRnZfUNar_MX6MXGsjk/edit#gid=1485604746"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "telegram_id": "={{ $json.telegram_id }}",
+            "puntos_lealtad": "={{ $json.puntos_lealtad }}"
+          },
+          "matchingColumns": [
+            "telegram_id"
+          ],
+          "schema": [
+            {
+              "id": "telegram_id",
+              "displayName": "telegram_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nombre_completo",
+              "displayName": "nombre_completo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "departamento/oficina",
+              "displayName": "departamento/oficina",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "puntos_lealtad",
+              "displayName": "puntos_lealtad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rol",
+              "displayName": "rol",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1440,
+        2448
+      ],
+      "id": "15953ace-bcf6-48a2-9c9a-6ba6564a6331",
+      "name": "Actualizar Puntos Lealtad",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "aCeHD0tiprpQK2b1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6975833647",
+        "text": "=⭐ Puntos ganados: {{ $('Calcular Puntos Lealtad').first().json.puntos_ganados }}  🏆 Puntos acumulados: {{ $('Calcular Puntos Lealtad').first().json.puntos_lealtad }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2336,
+        2448
+      ],
+      "id": "ce49ed00-52f2-4908-937c-8a8fd853a566",
+      "name": "Notificar Puntos Ganados",
+      "webhookId": "d399142c-622d-454b-b920-3d17db1eace5",
+      "credentials": {
+        "telegramApi": {
+          "id": "q47gIJWJUu80GSvB",
+          "name": "DeliveryBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 📌 INICIO Y CONTROL DE SESIÓN\n\n**Objetivo:** Recibir cada mensaje de Telegram, leer la sesión activa del usuario y verificar si ya existe una sesión registrada.\n\n**Entradas:** Mensaje entrante de Telegram\n\n**Salidas:** Sesión activa o sesión nueva inicializada\n\n**Resumen:** El Telegram Trigger recibe el mensaje → se lee la sesión activa en Google Sheets → si no existe sesión se crea una nueva con pantalla_actual = menu_principal.",
+        "height": 320,
+        "width": 708,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        3568
+      ],
+      "id": "841557f3-bc31-413f-a337-71d1e6b9534e",
+      "name": "INICIO Y SESIÓN"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 REGISTRO Y VALIDACIÓN DE USUARIO\n\n**Objetivo:** Verificar si el usuario existe en la BD; si no, iniciar flujo de registro solicitando nombre y departamento.\n\n**Entradas:** telegram_id del usuario\n\n**Salidas:** Usuario verificado o registrado en hoja USUARIOS\n\n**Resumen:** Se consulta la hoja USUARIOS → si existe continúa al menú → si no existe se solicita nombre y departamento y se registra en la BD.",
+        "height": 320,
+        "width": 500,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        3568
+      ],
+      "id": "bbd09b66-7ddb-4861-bbba-8eb702fac8ef",
+      "name": "REGISTRO Y VALIDACIÓN USUARIO"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 MENÚ PRINCIPAL Y NAVEGACIÓN\n\n**Objetivo:** Enrutar al usuario según la opción seleccionada y su rol (cliente/administrador).\n\n**Entradas:** Texto del mensaje (1-8) y pantalla_actual de la sesión\n\n**Salidas:** Redirección al flujo correspondiente (menú, pedido, consulta, administración)\n\n**Resumen:** El Switch principal evalúa el texto del mensaje y la pantalla_actual para dirigir al flujo correcto. El Switch de Rol determina si muestra panel cliente o administrador.",
+        "height": 280,
+        "width": 800,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1648,
+        128
+      ],
+      "id": "e0ecf4a2-a742-42a2-a932-ca6ec35b228b",
+      "name": "MENÚ PRINCIPAL"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 CATÁLOGO Y MENÚ\n\n**Objetivo:** Consultar y mostrar al usuario los productos disponibles con stock > 0.\n\n**Entradas:** Opción '1' del menú\n\n**Salidas:** Mensaje formateado con productos y precios\n\n**Resumen:** Se leen todos los productos de la hoja MENU → se filtran los disponibles (stock > 0) → se formatea el mensaje y se envía al usuario.",
+        "height": 240,
+        "width": 700,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        416
+      ],
+      "id": "00c1c010-6de4-4cc4-ac35-04f67dda8531",
+      "name": "CATÁLOGO"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 GESTIÓN DE PEDIDOS\n\n**Objetivo:** Capturar, validar y confirmar pedidos de los clientes.\n\n**Entradas:** Productos escritos por el usuario separados por coma\n\n**Salidas:** Pedido registrado en PEDIDOS, sesión actualizada, recibo enviado\n\n**Resumen:** Se parsean los productos → se valida que existan en el menú → se verifica stock → se muestra resumen con precio total → el usuario confirma con SI/NO → se genera ID único (ORD-XXXX) → se registra el pedido.",
+        "height": 172,
+        "width": 1104,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2096,
+        2000
+      ],
+      "id": "d9f206b8-21fa-4954-8240-e84932a49c19",
+      "name": "GESTIÓN DE PEDIDOS"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 INVENTARIO Y SISTEMA DE LEALTAD\n\n**Objetivo:** Descontar stock tras pedido confirmado y acumular puntos de lealtad al cliente.\n\n**Entradas:** Pedido confirmado y registrado\n\n**Salidas:** Stock actualizado en MENU, puntos actualizados en USUARIOS, recibo enviado\n\n**Resumen:** Se obtienen los productos del menú → se calcula el nuevo stock → se actualiza en Sheets. Paralelamente se busca al usuario → se calculan puntos (1 punto por cada $1000) → se actualiza en USUARIOS.",
+        "height": 196,
+        "width": 644,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2528,
+        2368
+      ],
+      "id": "5c5901e8-3eed-4896-9dca-25234d10dbf6",
+      "name": "INVENTARIO Y LEALTAD"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 CONSULTA DE ESTADO DE PEDIDO\n\n**Objetivo:** Permitir al cliente consultar el estado actual de su pedido por ID.\n\n**Entradas:** ID del pedido (ej. ORD-1234)\n\n**Salidas:** Estado del pedido (Recibido / Preparación / En camino / Entregado)\n\n**Resumen:** Se solicita el ID → se busca en la hoja PEDIDOS → si existe se muestra el estado → si no existe se notifica y se permite reintentar.",
+        "height": 192,
+        "width": 608,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        2848
+      ],
+      "id": "69b864de-cc6e-4211-b290-c4e8b161eca5",
+      "name": "CONSULTA DE PEDIDOS"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 ADMINISTRACIÓN - CAMBIO DE ESTADO\n\n**Objetivo:** Permitir al administrador cambiar el estado de un pedido y notificar al cliente.\n\n**Entradas:** ID del pedido y nuevo estado (1=Preparación, 2=En camino, 3=Entregado)\n\n**Salidas:** Estado actualizado en PEDIDOS, notificación enviada al cliente\n\n**Resumen:** Admin ingresa ID del pedido → se busca en PEDIDOS → si existe se solicita nuevo estado → se actualiza en Sheets → se busca el telegram_id del cliente → se envía notificación.",
+        "height": 260,
+        "width": 660
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        3600
+      ],
+      "id": "04b5dc47-3de5-42e1-94c6-f23a813422a9",
+      "name": "ADMINISTRACIÓN"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 REPORTES Y ADMINISTRACIÓN\n\n**Objetivo:** Mostrar pedidos pendientes y reporte financiero solo a administradores.\n\n**Entradas:** Opción 5 (pedidos pendientes) u opción 6 (reporte) del panel admin\n\n**Salidas:** Lista de pedidos pendientes o reporte con totales, producto estrella y hora pico\n\n**Resumen:** Se verifica rol administrador → se obtienen todos los pedidos → se filtra/calcula → se envía el reporte por Telegram.",
+        "height": 240,
+        "width": 700,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        1296
+      ],
+      "id": "b1e9bd39-a037-4210-a416-0551d31e1bce",
+      "name": "REPORTES"
+    },
+    {
+      "parameters": {
+        "content": "## 📌 NOTIFICACIONES\n\n**Objetivo:** Notificar a cocina y administradores sobre nuevos pedidos.\n\n**Entradas:** Pedido recién registrado\n\n**Salidas:** Mensaje de nuevo pedido enviado al canal de cocina/admin\n\n**Resumen:** Tras registrar el pedido se prepara un mensaje con detalles del pedido → se buscan los administradores en USUARIOS → se envía notificación al chat de cocina/administración.",
+        "height": 220,
+        "width": 652,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2304,
+        2624
+      ],
+      "id": "679aa03a-9d36-46b2-be24-4e46a71c43b7",
+      "name": "NOTIFICACIONES"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Leer Sesión Activa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Navegación Principal": {
+      "main": [
+        [
+          {
+            "node": "Consultar Datos Usuario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Consultar Datos Usuario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Obtener Productos Menú",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Configurar Sesión Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Configurar Sesión Consulta Estado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "¿Es Administrador? (Pedidos)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "¿Es Administrador? (Reporte)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "¿Es Administrador? (Cambio Estado)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mensaje Opción Inválida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Productos Menú": {
+      "main": [
+        [
+          {
+            "node": "Formatear Menú Disponible",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatear Menú Disponible": {
+      "main": [
+        [
+          {
+            "node": "Enviar Menú Al Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Pedido": {
+      "main": [
+        [
+          {
+            "node": "Guardar Estado Esperando Producto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Estado Esperando Producto": {
+      "main": [
+        [
+          {
+            "node": "Solicitar Productos Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer Sesión Activa": {
+      "main": [
+        [
+          {
+            "node": "Verificar Sesión Existente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular Total Y Carrito": {
+      "main": [
+        [
+          {
+            "node": "¿Hay Productos Agotados?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar ID Y Datos Pedido": {
+      "main": [
+        [
+          {
+            "node": "Guardar Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restablecer Sesión Post-Confirmación": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Post-Confirmación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Cancelación": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Cancelación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Cancelación": {
+      "main": [
+        [
+          {
+            "node": "Notificar Pedido Cancelado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Sesión Tipo Consulta": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solicitar Productos Pedido": {
+      "main": [
+        [
+          {
+            "node": "Preparar Sesión Tipo Consulta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Precios Y Stock": {
+      "main": [
+        [
+          {
+            "node": "Calcular Total Y Carrito",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear Productos Texto": {
+      "main": [
+        [
+          {
+            "node": "Consultar Menú Para Validar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Consulta Estado": {
+      "main": [
+        [
+          {
+            "node": "Guardar Estado Esperando ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Estado Esperando ID": {
+      "main": [
+        [
+          {
+            "node": "Solicitar ID Pedido Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Pedido Por ID": {
+      "main": [
+        [
+          {
+            "node": "¿Pedido Encontrado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mostrar Estado Pedido": {
+      "main": [
+        [
+          {
+            "node": "Restablecer Sesión Consulta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restablecer Sesión Consulta": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Consulta Finalizada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar Datos Usuario": {
+      "main": [
+        [
+          {
+            "node": "Verificar Usuario Existente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Usuario Registrado?": {
+      "main": [
+        [
+          {
+            "node": "Router Rol Usuario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Solicitar Nombre Registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Solicitar Nombre Registro": {
+      "main": [
+        [
+          {
+            "node": "Iniciar Sesión Registro Nombre",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Iniciar Sesión Registro Nombre": {
+      "main": [
+        [
+          {
+            "node": "Guardar Estado Registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Nombre Temporal": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Sesión Nombre",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Sesión Nombre": {
+      "main": [
+        [
+          {
+            "node": "Solicitar Departamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar Usuario Nuevo": {
+      "main": [
+        [
+          {
+            "node": "Confirmar Registro Usuario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Post-Registro": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Post-Registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmar Registro Usuario": {
+      "main": [
+        [
+          {
+            "node": "Configurar Sesión Post-Registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Usuario Existente": {
+      "main": [
+        [
+          {
+            "node": "¿Usuario Registrado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Sesión Existente": {
+      "main": [
+        [
+          {
+            "node": "¿Sesión Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Sesión Existe?": {
+      "main": [
+        [
+          {
+            "node": "Router Pantalla Actual",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Configurar Sesión Nueva",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Nueva": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Nueva",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router Rol Usuario": {
+      "main": [
+        [
+          {
+            "node": "Mostrar Menú Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mostrar Panel Administrador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Admin ID Pedido": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Admin ID Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Admin ID Pedido": {
+      "main": [
+        [
+          {
+            "node": "Solicitar ID Pedido Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar ID Pedido Temporal Admin": {
+      "main": [
+        [
+          {
+            "node": "Guardar ID Pedido En Sesión",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar ID Pedido En Sesión": {
+      "main": [
+        [
+          {
+            "node": "Solicitar Nuevo Estado Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Traducir Opción A Estado": {
+      "main": [
+        [
+          {
+            "node": "Buscar Pedido Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Pedido Admin": {
+      "main": [
+        [
+          {
+            "node": "¿Pedido Admin Encontrado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router Pantalla Actual": {
+      "main": [
+        [
+          {
+            "node": "Navegación Principal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Parsear Productos Texto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Router Confirmación SI/NO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Buscar Pedido Por ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Guardar Nombre Temporal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Registrar Usuario Nuevo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Guardar ID Pedido Temporal Admin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Traducir Opción A Estado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Estado Pedido": {
+      "main": [
+        [
+          {
+            "node": "Obtener Datos Pedido Para Notificar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Datos Notificación Cliente": {
+      "main": [
+        [
+          {
+            "node": "Buscar Datos Usuario Por ID Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Datos Usuario Por ID Pedido": {
+      "main": [
+        [
+          {
+            "node": "Notificar Cambio Estado Al Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Datos Pedido Para Notificar": {
+      "main": [
+        [
+          {
+            "node": "Preparar Datos Notificación Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Administradores": {
+      "main": [
+        [
+          {
+            "node": "Preparar Notificación Cocina",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Notificación Cocina": {
+      "main": [
+        [
+          {
+            "node": "Notificar Cocina",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Pedidos Pendientes": {
+      "main": [
+        [
+          {
+            "node": "Formatear Pedidos Pendientes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatear Pedidos Pendientes": {
+      "main": [
+        [
+          {
+            "node": "Mostrar Pedidos Pendientes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Pedidos Reporte": {
+      "main": [
+        [
+          {
+            "node": "Generar Reporte Financiero",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Reporte Financiero": {
+      "main": [
+        [
+          {
+            "node": "Enviar Reporte Financiero",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Es Administrador? (Pedidos)": {
+      "main": [
+        [
+          {
+            "node": "Configurar Sesión Admin ID Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Denegar Acceso Pedidos Pendientes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Es Administrador? (Reporte)": {
+      "main": [
+        [
+          {
+            "node": "Obtener Pedidos Pendientes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Denegar Acceso Reporte",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Es Administrador? (Cambio Estado)": {
+      "main": [
+        [
+          {
+            "node": "Obtener Pedidos Reporte",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Denegar Acceso Cambio Estado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recibo Digital": {
+      "main": [
+        [
+          {
+            "node": "Restablecer Sesión Post-Confirmación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Pedido": {
+      "main": [
+        [
+          {
+            "node": "Buscar Administradores",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Buscar Usuario Para Puntos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obtener Productos Para Stock": {
+      "main": [
+        [
+          {
+            "node": "Calcular Nuevo Stock",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular Nuevo Stock": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Stock",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Productos Existen": {
+      "main": [
+        [
+          {
+            "node": "¿Productos Válidos?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Productos Válidos?": {
+      "main": [
+        [
+          {
+            "node": "Obtener Precios Y Stock",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notificar Productos No Encontrados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router Confirmación SI/NO": {
+      "main": [
+        [
+          {
+            "node": "Generar ID Y Datos Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Configurar Sesión Cancelación",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notificar Respuesta Inválida SI/NO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay Productos Agotados?": {
+      "main": [
+        [
+          {
+            "node": "Notificar Productos Agotados",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Guardar Carrito En Sesión",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Carrito En Sesión": {
+      "main": [
+        [
+          {
+            "node": "Mostrar Resumen Confirmación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Nueva": {
+      "main": [
+        [
+          {
+            "node": "Bienvenida Usuario Nuevo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar Menú Para Validar": {
+      "main": [
+        [
+          {
+            "node": "Validar Productos Existen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notificar Cocina": {
+      "main": [
+        [
+          {
+            "node": "Obtener Productos Para Stock",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notificar Cambio Estado Al Cliente": {
+      "main": [
+        [
+          {
+            "node": "Configurar Sesión Post-Cambio Estado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Post-Cambio Estado": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Post-Cambio Estado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Pedido Encontrado?": {
+      "main": [
+        [
+          {
+            "node": "Mostrar Estado Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notificar Pedido No Encontrado Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notificar Pedido No Encontrado Cliente": {
+      "main": [
+        [
+          {
+            "node": "Configurar Sesión Reintento Consulta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Reintento Consulta": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Reintento Consulta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Pedido Admin Encontrado?": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Estado Pedido",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notificar Pedido No Encontrado Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Sesión Reintento Admin": {
+      "main": [
+        [
+          {
+            "node": "Guardar Sesión Reintento Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Reintento Admin": {
+      "main": [
+        [
+          {
+            "node": "Solicitar ID Reintento Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notificar Pedido No Encontrado Admin": {
+      "main": [
+        [
+          {
+            "node": "Configurar Sesión Reintento Admin",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Reintento Consulta": {
+      "main": [
+        [
+          {
+            "node": "Solicitar ID Reintento Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Usuario Para Puntos": {
+      "main": [
+        [
+          {
+            "node": "Calcular Puntos Lealtad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular Puntos Lealtad": {
+      "main": [
+        [
+          {
+            "node": "Actualizar Puntos Lealtad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Actualizar Puntos Lealtad": {
+      "main": [
+        [
+          {
+            "node": "Recibo Digital",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Sesión Post-Confirmación": {
+      "main": [
+        [
+          {
+            "node": "Notificar Puntos Ganados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "62d5eeee-2499-4aa3-afae-2bca99bd7d59",
+  "meta": {
+    "instanceId": "95259a3c9baa1707fcb07de5217f5c70238febb9845e12a567f199d6cf52ae0d"
+  },
+  "id": "zMwCUyliCZJraKsm",
+  "tags": []
+}
