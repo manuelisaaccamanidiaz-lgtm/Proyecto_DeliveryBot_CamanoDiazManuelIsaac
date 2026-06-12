@@ -661,6 +661,9 @@ se añadio la funcionalidad para que el sistema solo acepte pedidos dentro del r
 imagen de la funcionalidad:
 <a href="https://ibb.co/wh17WhP5"><img src="https://i.ibb.co/0y3KMy6H/imagen-2026-06-12-074445352.png" alt="imagen-2026-06-12-074445352" border="0"></a>
 
+imagen de mensaje prueba:
+<a href="https://ibb.co/LhXNpQxv"><img src="https://i.ibb.co/Wp4VKDks/imagen-2026-06-12-074621000.png" alt="imagen-2026-06-12-074621000" border="0"></a>
+
 codgo del nodo code:
 ```javascript
 try {
