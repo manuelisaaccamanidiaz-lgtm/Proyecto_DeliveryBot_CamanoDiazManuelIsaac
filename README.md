@@ -656,6 +656,31 @@ El archivo **DeliveryBot_DB** contiene exactamente cuatro hojas en el siguiente 
 > 💡 Para configurar el proyecto en un nuevo entorno: crear el archivo de Google Sheets con las mismas cuatro hojas y los encabezados exactos indicados, actualizar las credenciales de Google Sheets API en n8n y el token del bot de Telegram.
 
 ---
+# ** Update ** : Examen [1]
+se añadio la funcionalidad para que el sistema solo acepte pedidos dentro del rango del horario,para que solo cuando la hora actual este entre 8:00 am y 5:00 pm sea pasible hacer pedido,se hizo implementando un nodo code seguido de un nodo if donde valida que el resultado del nodo code sea verdadero,en caso de que lo sea sigue el flujo normal,en caso de que no enviara un mensaje recordando el horario y cerrando el flujo
+imagen de la funcionalidad:
+<a href="https://ibb.co/wh17WhP5"><img src="https://i.ibb.co/0y3KMy6H/imagen-2026-06-12-074445352.png" alt="imagen-2026-06-12-074445352" border="0"></a>
+
+codgo del nodo code:
+```javascript
+try {
+const close1 = "17:00";
+  const close = new Date(close1)
+const open1 = "08:00"
+  const  open = new Date (open1)
+      const currentTimeDate = new Date();
+
+      if (open > currentTimeDate ||close < currentTimeDate) {
+        return{hora_es_valida :true};
+      }else {
+        return{hora_es_valida :false};
+      }
+;}
+catch (error) {
+  return [{ json: { error: true, mensaje_error: '❌ Error en el nodo de codigo hora', telegram_id: (() => { try { return $('Telegram Trigger').first().json.message.chat.id; } catch(e) { return 0; } })() } }];
+}
+```
+---
 
 ## 📈 Resultados Obtenidos
 
